@@ -1,0 +1,145 @@
+/* Основные стили для body */
+body {
+    font-family: 'Arial', sans-serif; /* Arial для шрифта */
+    margin: 0; /* Убираем отступы по умолчанию */
+    padding: 20px; /* Общий отступ */
+    background-color: #f4f4f4; /* Цвет фона */
+    line-height: 1.6; /* Увеличиваем интервал между строками для лучшей читаемости */
+}
+
+/* Стили для заголовка */
+header {
+    background-color: #333; /* Темный фон заголовка */
+    color: #fff; /* Белый текст */
+    padding: 15px 20px; /* Отступы по вертикали и горизонтали */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Легкая тень под заголовком */
+}
+
+/* Управление фильтрами */
+#filter-controls {
+    margin: 15px 0; /* Отступы сверху и снизу */
+}
+
+/* Стили для кнопок */
+.btn {
+    padding: 10px 20px; /* Отступы для кнопок */
+    background-color: #007bff; /* Основной цвет кнопки */
+    color: white; /* Белый текст */
+    border: none; /* Без границы */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Курсор в виде указателя при наведении */
+    transition: background-color 0.3s ease, transform 0.2s; /* Плавный переход цвета фона и трансформации */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+    transform: translateY(-2px); /* Небольшая анимация при наведении */
+}
+
+/* Стили для списка книг */
+#book-list {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+/* Элемент книги */
+.book-item {
+    background-color: #fff; /* Белый фон элемента книги */
+    margin: 15px 0; /* Отступы сверху и снизу */
+    padding: 15px; /* Внутренние отступы */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень для глубины */
+    transition: transform 0.2s; /* Плавный переход для анимации */
+}
+
+.book-item:hover {
+    transform: translateY(-2px); /* Поднимаем элемент книги при наведении */
+}
+
+.book-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #333; /* Цвет текста */
+    font-weight: 500; /* Полужирное начертание */
+}
+
+.book-link:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Стили для подробностей книги */
+.book-details {
+    background-color: #ffffff; /* Белый фон */
+    padding: 20px; /* Внутренний отступ */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для создания эффекта глубины */
+    margin: 20px; /* Отступы вокруг карточки */
+    transition: transform 0.2s; /* Плавный переход для анимации */
+}
+
+.book-details:hover {
+    transform: translateY(-5px); /* Подъем карточки при наведении */
+}
+
+.book-title {
+    font-size: 28px; /* Размер шрифта заголовка */
+    color: #333; /* Цвет заголовка */
+    margin: 0 0 10px; /* Отступы */
+    font-weight: bold; /* Жирный текст */
+}
+
+.book-author, .book-year, .book-status, .checked-out-info {
+    font-size: 16px; /* Размер шрифта для других данных */
+    color: #555; /* Серый цвет для текста */
+    margin: 5px 0; /* Отступы между строками */
+}
+
+.book-status {
+    font-weight: bold; /* Жирный шрифт для статуса книги */
+}
+
+/* Стили для информации о взятых книгах */
+.checked-out-info {
+    font-style: italic; /* Курсив для выделения */
+    color: #d9534f; /* Красный цвет для статуса "На руках" */
+}
+
+/* Стили для действий с книгой */
+.book-actions {
+    margin: 15px 0; /* Отступы сверху и снизу */
+}
+
+/* Стили для страницы ошибки */
+.error-page {
+    text-align: center; /* Центрируем текст */
+    margin-top: 50px; /* Отступ сверху */
+}
+
+.error-title {
+    font-size: 48px; /* Большой шрифт для заголовка ошибки */
+    color: #c00; /* Красный цвет для текста ошибки */
+}
+
+.error-message {
+    margin: 20px 0; /* Отступы сверху и снизу */
+    color: #666; /* Серый цвет для сообщения */
+}
+
+.error-nav {
+    margin-top: 30px; /* Отступ сверху */
+}
+
+/* Стили для страницы приветствия */
+.welcome-page {
+    text-align: center; /* Центрируем текст */
+    margin-top: 50px; /* Отступ сверху */
+}
+
+.welcome-title {
+    font-size: 48px; /* Большой шрифт для приветственного заголовка */
+    color: #333; /* Цвет заголовка */
+}
+
+.welcome-nav {
+    margin-top: 30px; /* Отступ сверху */
+}

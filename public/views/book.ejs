@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= book.title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="book-details">
+        <h1 class="book-title"><%= book.title %></h1>
+        <p class="book-author">Автор: <%= book.author %></p>
+        <p class="book-year">Год: <%= book.year %></p>
+        <p class="book-status"><%= book.available ? 'Можно взять' : 'На руках' %></p>
+        <% if (!book.available) { %>
+            <p class="checked-out-info">Взял <%= book.checkedOutBy.name %> до <%= book.checkedOutBy.returnDate.toLocaleDateString() %></p>
+        <% } %>
+    </div>
+
+    <div class="book-actions">
+        <button class="btn" id="upd-book-btn">Редактировать книгу</button>
+        <dialog id="upd-book-dialog">
+            <form id="upd-book-form" onsubmit="updateBook(event)">
+                <input type="hidden" name="bookId" value="<%= book.id %>">
+                <label>Название:<input type="text" name="title" value="<%= book.title %>" required></label>
+                <label>Автор:<input type="text" name="author" value="<%= book.author %>" required></label>
+                <label>Год:<input type="number" name="year" value="<%= book.year %>" required></label>
+                <button type="submit" class="btn">Обновить</button>
+                <button type="button" class="btn" onclick="closeUpdateBookDialog()">Закрыть</button>
+            </form>
+        </dialog>
+    </div>
+
+    <% if (book.available) { %>
+        <div class="book-actions">
+            <button class="btn" id="checkout-btn">Взять книгу</button>
+            <dialog id="checkout-dialog">
+                <form id="checkout-form" onsubmit="checkoutBook(event)">
+                    <input type="hidden" name="bookId" value="<%= book.id %>">
+                    <label>Имя читателя:<input type="text" name="username" required></label>
+                    <label>Дата возврата:<input type="date" name="returnDate" required></label>
+                    <button type="submit" class="btn">Выдать книгу</button>
+                    <button type="button" class="btn" onclick="closeCheckoutDialog()">Закрыть</button>
+                </form>
+            </dialog>
+        </div>
+    <% } else { %>
+        <div class="book-actions">
+            <button class="btn" id="return-btn" onclick="returnBook('<%= book.id %>')">Вернуть книгу</button>
+        </div>
+    <% } %>
+    <script src="/js/book_script.js"></script>
+</body>
+</html>

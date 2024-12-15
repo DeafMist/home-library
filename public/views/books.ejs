@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Книги</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Список книг</h1>
+        <div id="filter-controls">
+            <label><input type="checkbox" id="filter-available"> Только доступные</label>
+            <label><input type="checkbox" id="filter-overdue"> Просроченные</label>
+        </div>
+
+        <div>
+            <button class="btn" id="add-book-btn">Добавить книгу</button>
+            <dialog id="add-book-dialog">
+                <form id="add-book-form" onsubmit="addBook(event)">
+                    <label>Название:<input type="text" name="title" required></label>
+                    <label>Автор:<input type="text" name="author" required></label>
+                    <label>Год:<input type="number" name="year" required></label>
+                    <button type="submit" class="btn">Добавить</button>
+                    <button type="button" class="btn" onclick="closeDialog()">Закрыть</button>
+                </form>
+            </dialog>
+        </div>
+    </header>
+
+    <div>
+        <ul id="book-list">
+            <% books.forEach((book) => { %>
+                <li class="book-item" id="book-<%= book.id %>">
+                    <a class="book-link" href="/books/<%= book.id %>"><%= book.author %>: "<%= book.title %>"</a>
+                    <span class="book-status"><%= book.available ? 'Можно взять' : 'На руках' %></span>
+                    <button class="btn" onclick="deleteBook('<%= book.id %>')">Удалить</button>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+    <script src="/js/books_script.js"></script>
+</body>
+</html>
