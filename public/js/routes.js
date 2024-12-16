@@ -1,9 +1,9 @@
 const express = require('express');
-const {Book, filterBooks} = require('./book');
+const { Book, filterBooks } = require('./book');
 const utils = require("./utils");
 
 // load json with books
-let books = require('../json/books.json').map((book) => new Book(book));
+const books = require('../json/books.json').map((book) => new Book(book));
 
 const router = express.Router();
 
@@ -86,7 +86,7 @@ router.delete('/books/:id', (req, res) => {
         return res.status(404).send({ error: 'Book not found' });
     }
 
-    books = books.filter(book => book.id !== id);
+    books.splice(bookIndex, 1);
     return res.status(200).send({ message: 'Book deleted' });
 });
 
@@ -135,4 +135,7 @@ router.get('*', (req, res) => {
     return res.status(404).render('error');
 });
 
-module.exports = router;
+module.exports = {
+    router,
+    books,
+};

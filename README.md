@@ -1,30 +1,35 @@
 # Home library
 
-This project can helps you manage your home library.
+This project can help you manage your home library.
 
 ## Description
 
 You can add/update/remove books, rent them out and return back.
 
+The initial state of library in `books.json`. The changed state is saved to the same file before closing the application.
+
 ## Stack
 
-* JavaScript
+* JavaScript + Node.js
 * Express.js
 * HTML + EJS
 * CSS
 
 ## Getting Started
 
-### Dependencies
+1) Clone repository:
 
-Run this command to install all dependencies from package.json
+```
+git clone https://github.com/DeafMist/home-library.git
+```
+
+2) Install dependencies:
 ```
 npm i
 ```
 
-### Run
+3) Run the application:
 
-You can run project by this command
 ```
 npm run start
 ```

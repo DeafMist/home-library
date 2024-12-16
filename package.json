@@ -1,7 +1,7 @@
 {
   "name": "home-library",
   "version": "1.0.0",
-  "description": "Project that can helps you manage your home library",
+  "description": "Project that can help you manage your home library",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"

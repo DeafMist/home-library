@@ -2,7 +2,7 @@ const utils = require('./utils');
 
 const Book = class Book {
     // books count that provide book's id
-    static bookCount = 0;
+    static bookCount = 1;
 
     constructor(book) {
         this.validateBook(book);
@@ -12,10 +12,9 @@ const Book = class Book {
         this.year = book.year;
         // true by default
         this.available = book.available ?? true;
+        this.resetCheckedOutBy();
         if (book.checkedOutBy) {
             this.updateCheckedOutBy(book.checkedOutBy);
-        } else {
-            this.resetCheckedOutBy();
         }
     }
 
